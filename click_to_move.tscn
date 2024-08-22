@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://38y3w17senu2"]
+
+[ext_resource type="Script" path="res://click_to_move.gd" id="1_xgl18"]
+[ext_resource type="Texture2D" uid="uid://bkhg12wr0e2ju" path="res://fondo.jpg" id="2_4vx7r"]
+[ext_resource type="Texture2D" uid="uid://munyr1c7fvn4" path="res://icon.svg" id="3_g3h6y"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ofxww"]
+vertices = PackedVector2Array(647.398, 542.719, 665.398, 495.008, 685, 505.094, 685, 533.703, 682.977, 561.891, 686.492, 632.977, 13.2188, 632.008, 16.8594, 463.453, 38.1094, 453.648, 618.648, 548.469, 565, 522.242, 243, 362.32, 243, 314.211, 282.172, 315.031, 484.641, 404.953, 565, 451.578, 568.211, 413, 368.633, 292.648, 435.258, 273.609, 491.617, 298.758, 494.93, 331.813, 153.461, 390.711, 113.102, 398.391)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(4, 5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13, 14, 15), PackedInt32Array(14, 16, 15), PackedInt32Array(17, 18, 19, 20, 14), PackedInt32Array(13, 17, 14), PackedInt32Array(21, 11, 10, 8), PackedInt32Array(9, 0, 4), PackedInt32Array(10, 9, 8), PackedInt32Array(21, 8, 22)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(7, 457, 3, 642, 697, 643, 693, 562, 695, 534, 695, 499, 660, 481, 640, 534, 620, 538, 575, 516, 575, 452, 579, 404, 496, 396, 505, 332, 501, 292, 436, 263, 366, 283, 281, 305, 233, 304, 233, 355, 151, 381, 109, 389, 33, 445)])
+
+[node name="ClickToMove" type="Node2D"]
+script = ExtResource("1_xgl18")
+
+[node name="Fondo" type="TextureRect" parent="."]
+offset_top = -312.0
+offset_right = 1024.0
+offset_bottom = 455.0
+scale = Vector2(1.25311, 1.25311)
+texture = ExtResource("2_4vx7r")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ofxww")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="NavigationAgent2D"]
+position = Vector2(102, 557)
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("3_g3h6y")
