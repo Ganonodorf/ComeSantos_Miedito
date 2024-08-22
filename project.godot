@@ -14,6 +14,10 @@ config/name="Isometric POC"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/cba/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/wakatime/plugin.cfg")
+
 [input]
 
 saltar={
