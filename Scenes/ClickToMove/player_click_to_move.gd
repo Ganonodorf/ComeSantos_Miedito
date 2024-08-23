@@ -61,13 +61,13 @@ func _move():
 	move_and_slide()
 
 func _face_to_target_path():
-	if velocity.round().x >= -30 and velocity.round().x <= 30 and velocity.y <= 0:
+	if velocity.round().x >= -speed * 0.1 and velocity.round().x <= speed * 0.1 and velocity.y <= 0:
 		animated_sprite.play("NORTH")
-	elif velocity.round().y >= -30 and velocity.round().y <= 30 and velocity.x >= 0:
+	elif velocity.round().y >= -speed * 0.1 and velocity.round().y <= speed * 0.1 and velocity.x >= 0:
 		animated_sprite.play("EAST")
-	elif velocity.round().x >= -30 and velocity.round().x <= 30 and velocity.y >= 0:
+	elif velocity.round().x >= -speed * 0.1 and velocity.round().x <= speed * 0.1 and velocity.y >= 0:
 		animated_sprite.play("SOUTH")
-	elif velocity.round().y >= -30 and velocity.round().y <= 30 and velocity.x <= 0:
+	elif velocity.round().y >= -speed * 0.1 and velocity.round().y <= speed * 0.1 and velocity.x <= 0:
 		animated_sprite.play("WEST")
 	elif velocity.x >= 0 and velocity.y <= 0:
 		animated_sprite.play("NE")
