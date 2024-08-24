@@ -2,7 +2,7 @@ extends Node2D
 
 
 @onready var player = get_tree().get_first_node_in_group("player")
-@onready var label = $label
+@onready var label = $Label
 
 const baseText = "[E] to "
 
@@ -10,17 +10,17 @@ var active_areas = []
 var can_interact = true
 
 
-func registerArea(area: InteractionArea):
+func register_area(area: InteractionArea):
 	active_areas.push_back(area)
 
 
-func unregisterArea(area: InteractionArea):
+func unregister_area(area: InteractionArea):
 	var index = active_areas.find(area)
 	if index != -1:
 		active_areas.remove_at(index)
 
 func _process(delta: float) -> void:
-	if active_areas.size > 0 && can_interact:
+	if active_areas.size() > 0 && can_interact:
 		active_areas.sort_custom(sort_by_distance_to_player)
 		label.text = baseText + active_areas[0].action_name
 		label.global_position = active_areas[0].global_position

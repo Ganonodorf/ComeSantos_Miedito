@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://cakotc60nociv"]
+[gd_scene load_steps=94 format=3 uid="uid://cakotc60nociv"]
 
 [ext_resource type="Script" path="res://Scenes/ClickToMove/click_to_move.gd" id="1_0bb76"]
 [ext_resource type="Texture2D" uid="uid://bkhg12wr0e2ju" path="res://Assets/fondo.jpg" id="2_1mptn"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://d0ut0gbju06ia" path="res://Assets/Neon Blue & Purple/neonblue&purple_walk_SOUTH-Sheet.png" id="10_ao67y"]
 [ext_resource type="Texture2D" uid="uid://c43blotxitji4" path="res://Assets/Neon Blue & Purple/neonblue&purple_walk_SOUTH-WEST-Sheet.png" id="11_bn7ir"]
 [ext_resource type="Texture2D" uid="uid://b30h6wewcwx1e" path="res://Assets/Neon Blue & Purple/neonblue&purple_walk_WEST-Sheet.png" id="12_txtpf"]
+[ext_resource type="Script" path="res://Scenes/Interact/npc.gd" id="13_mjpdo"]
+[ext_resource type="Texture2D" uid="uid://2x44as1akj5o" path="res://Sprites/le niñe.png" id="13_pidbu"]
+[ext_resource type="PackedScene" uid="uid://04qqisvpsx4c" path="res://Interaction/Interaction Area/interaction_area.tscn" id="15_qt2wf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_korpj"]
 vertices = PackedVector2Array(506.078, 553.391, 187.328, 402.93, 178.57, 345.547, 272.977, 341.93, 442.547, 447.133, 497.633, 493.203, 610.039, 622.711, 606.961, 636.906, 14.9297, 631.094, 14.0234, 494.297, 90.7578, 422.242, 593.242, 538.203, 613.641, 543.602, 567.508, 565.922, 352.43, 312.5, 428.867, 333.828)
@@ -580,6 +583,9 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_eeu4m")
 fill_from = Vector2(1, 0)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qciwy"]
+radius = 59.1354
+
 [node name="ClickToMove" type="Node2D"]
 script = ExtResource("1_0bb76")
 
@@ -595,11 +601,12 @@ navigation_polygon = SubResource("NavigationPolygon_korpj")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("agent") groups=["player"]]
 position = Vector2(312, 438)
+collision_mask = 0
 script = ExtResource("3_7xi1v")
 speed = 200.0
 agent = NodePath("NavigationAgent2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["player"]]
 position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_cug3n")
 
@@ -615,5 +622,18 @@ frame_progress = 0.32033
 position = Vector2(-251.982, 288.508)
 scale = Vector2(-0.0837341, 0.095957)
 texture = SubResource("GradientTexture2D_hm748")
+
+[node name="NPC" type="Node2D" parent="."]
+position = Vector2(266, 359)
+script = ExtResource("13_mjpdo")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC"]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("13_pidbu")
+
+[node name="InteractionArea" parent="NPC" instance=ExtResource("15_qt2wf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/InteractionArea"]
+shape = SubResource("CircleShape2D_qciwy")
 
 [connection signal="navigation_finished" from="CharacterBody2D/NavigationAgent2D" to="CharacterBody2D" method="_on_navigation_agent_2d_navigation_finished"]
