@@ -607,9 +607,8 @@ shape = SubResource("CircleShape2D_cug3n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_4qycl")
-animation = &"WEST"
+animation = &"EAST"
 autoplay = "IDLE"
-frame_progress = 0.32033
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-251.982, 288.508)
