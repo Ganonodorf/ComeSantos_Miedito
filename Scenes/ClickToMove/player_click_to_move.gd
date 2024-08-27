@@ -9,9 +9,11 @@ class_name PlayerClickToMove extends CharacterBody2D
 @export var agent: NavigationAgent2D
 
 # MARK: Public vars
+var active_areas = []
 
 # MARK: Private vars
 var _moving := false
+
 # MARK: Onready vars
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -35,7 +37,7 @@ func _physics_process(delta: float) -> void:
 # MARK: Built-in methods
 
 func _input(event) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		_moving = true
 		agent.target_position = event.position
 
@@ -53,6 +55,7 @@ func _move():
 	var dir := targetPos - global_position;
 	
 	if targetPos.distance_to(global_position) < 3.0: return
+	
 	velocity = dir.normalized() * speed
 	if _moving:
 		_face_to_target_path()

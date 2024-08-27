@@ -1,4 +1,4 @@
-class_name ClickToMove extends Node2D
+class_name Npc extends Node2D
 
 # MARK: Signals
 
@@ -11,7 +11,6 @@ class_name ClickToMove extends Node2D
 # MARK: Private vars
 
 # MARK: Onready vars
-@onready var sprite_2d: Sprite2D = $Sprite2D
 
 # MARK: Basic lifecycle
 
@@ -22,16 +21,17 @@ func _enter_tree() -> void:
 	pass
 
 func _ready() -> void:
-	pass
+	$InteractComponent.player_interacted.connect(_npc_event)
 
 # MARK: Built-in methods
 
 func _input(event) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		sprite_2d.position = event.position
+	pass
 
 # MARK: Public methods
 
 # MARK: Private methods
+func _npc_event():
+	print("Se ha recibido un evento concreto")
 
 # MARK: Internal classes

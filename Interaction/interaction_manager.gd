@@ -3,6 +3,7 @@ extends Node2D
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var label = $Label
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const baseText = "[E] to "
 
@@ -24,10 +25,12 @@ func _process(delta: float) -> void:
 		active_areas.sort_custom(sort_by_distance_to_player)
 		label.text = baseText + active_areas[0].action_name
 		label.global_position = active_areas[0].global_position
-		label.global_position.y -= 36
+		label.global_position.y -= 60
 		label.global_position.x -= label.size.x/2
+		animation_player.play("pulse")
 		label.show()
 	else:
+		animation_player.stop()
 		label.hide()
 
 
