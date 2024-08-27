@@ -1,6 +1,5 @@
-[gd_scene load_steps=98 format=3 uid="uid://dhp4c8bd5jjtw"]
+[gd_scene load_steps=95 format=3 uid="uid://dhp4c8bd5jjtw"]
 
-[ext_resource type="Script" path="res://Scenes/ClickToMove/click_to_move.gd" id="1_d02dh"]
 [ext_resource type="Texture2D" uid="uid://bkhg12wr0e2ju" path="res://Assets/fondo.jpg" id="2_t1ma2"]
 [ext_resource type="Script" path="res://Scenes/InteractWithoutAutoLoader/npc.gd" id="3_fmcq3"]
 [ext_resource type="Shader" path="res://Scenes/Interact/border.gdshader" id="4_rkrsn"]
@@ -22,13 +21,6 @@
 vertices = PackedVector2Array(506.078, 553.391, 187.328, 402.93, 178.57, 345.547, 272.977, 341.93, 442.547, 447.133, 497.633, 493.203, 610.039, 622.711, 606.961, 636.906, 14.9297, 631.094, 14.0234, 494.297, 90.7578, 422.242, 593.242, 538.203, 613.641, 543.602, 567.508, 565.922, 352.43, 312.5, 428.867, 333.828)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10, 1, 0), PackedInt32Array(11, 12, 6, 13), PackedInt32Array(14, 15, 4, 3), PackedInt32Array(6, 0, 13)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(4, 490, 86, 413, 176, 395, 167, 336, 271, 332, 352, 302, 438, 326, 452, 442, 507, 488, 515, 545, 564, 555, 590, 527, 624, 536, 620, 624, 615, 647, 5, 641)])
-
-[sub_resource type="Gradient" id="Gradient_eeu4m"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_hm748"]
-gradient = SubResource("Gradient_eeu4m")
-fill_from = Vector2(1, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cxf14"]
 shader = ExtResource("4_rkrsn")
@@ -597,7 +589,6 @@ animations = [{
 radius = 18.0278
 
 [node name="ClickToMove" type="Node2D"]
-script = ExtResource("1_d02dh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 1.0
@@ -608,11 +599,6 @@ texture = ExtResource("2_t1ma2")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_korpj")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-251.982, 288.508)
-scale = Vector2(-0.0837341, 0.095957)
-texture = SubResource("GradientTexture2D_hm748")
 
 [node name="NPC" type="Node2D" parent="."]
 position = Vector2(284, 360)

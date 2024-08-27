@@ -9,12 +9,14 @@ func _on_area_entered(area: Area2D) -> void:
 		can_interact = true
 		target = area
 		area.get_sprite().material.set_shader_parameter("enabled", true)
+		target.show_label()
 
 
 func _on_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Interactuable") and get_parent() is PlayerClickToMove:
 		can_interact = false
 		area.get_sprite().material.set_shader_parameter("enabled", false)
+		target.remove_label()
 		target = null
 		
 
