@@ -2,11 +2,16 @@ extends Area2D
 class_name InteractionArea
 
 @onready var sprite: Sprite2D = $"../Sprite2D"
+@export var action_name: String = "interact"
 
 var player_in_range := false
 
+var interact: Callable = func():
+	pass 
+	
 func _on_body_entered(body: Node):
 	if body.is_in_group("player"): 
+		InteractionManager.register_area(self)
 		var label: Label = Label.new()
 		get_parent().add_child(label)
 		label.text = "[E] to interact"
@@ -19,6 +24,7 @@ func _on_body_entered(body: Node):
 
 func _on_body_exited(body: Node):
 	if body.is_in_group("player"):
+		InteractionManager.unregister_area(self)
 		if $"../InteractLabel":
 			$"../InteractLabel".queue_free()
 		player_in_range = false
