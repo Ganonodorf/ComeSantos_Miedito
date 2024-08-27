@@ -1,0 +1,1 @@
+ffmpeg -i clipardo.avi -strict -2 clipardo.mp4
