@@ -1,0 +1,20 @@
+join npc_Character 1 [animation="Bounce In" wait="true"]
+npc_Character: ¡Hola! ¿Que te trae por aquí?
+label Hub (¿Quieres algo más?)
+join player 1
+- ¿Tienes una linterna por algún casual? [if {hasLintern} == false]
+	npc_Character (Pani_Suspicious): A ver... Déjame que mire en la mochila...
+	npc_Character (Pani_Portrait): Sí, toma, te la presto.
+	set {hasLintern} = true
+	npc_Character (Pani_Suspicious): ¿Pero no me la rompas eh?
+	player: ¡Gracias!
+	jump Hub
+- ¿Qué haces aquí?
+	npc_Character: Ya sabes, a veces estoy aquí y a veces estoy allá, soy un ser del campo.
+	npc_Character: Pero mira qué cara sé poner
+	npc_Character (Pani_Pixel): ¡Bú!
+	player (Player_Portrait): ¡Ah! ¡Pero como haces eso!
+	npc_Character (Pani_Portrait): ¡Ja, ja, ja!
+	jump Hub
+- Ya me voy
+	npc_Character (Pani_Portrait): ¡Has luego!

@@ -1,0 +1,57 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.878906, 0.537193, 0.205994, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Pani_Portrait",
+"description": "Le chique que has conocido en el corijo",
+"display_name": "Pani",
+"mirror": true,
+"nicknames": ["El Agua del barrio"],
+"offset": Vector2(650, 0),
+"portraits": {
+"Pani_Looking": {
+"export_overrides": {
+"image": "\"res://Assets/Characters/Pani_Looking.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+},
+"Pani_Pixel": {
+"export_overrides": {
+"image": "\"res://Assets/Characters/Pani_Pixel.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+},
+"Pani_Portrait": {
+"export_overrides": {
+"image": "\"res://Assets/Characters/Pani_Portrait.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+},
+"Pani_Suspicious": {
+"export_overrides": {
+"image": "\"res://Assets/Characters/Pani_Suspicious.png\""
+},
+"ignore_char_scale": true,
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.4,
+"scene": ""
+}
+},
+"scale": 0.5
+}

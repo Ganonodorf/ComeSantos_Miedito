@@ -1,0 +1,31 @@
+~ start
+Puerta: El marco de la puerta deja que la oscuridad del interior del edificio se cierna sobre ti, dándote a entender que no saldrá nada bueno si entras sin algo de luz.
+% Puerta: Una ráfaga de aire frío entra desde el interior.
+% Puerta: Al mirar dentro parece que unos pequeños ojos te miran de vuelta.
+if InventoryManagerGlobal.hasLantern() == true
+	=> hasLantern
+else
+	=> noLantern
+
+~ noLantern
+- Quedarte mirando el interior
+	Puerta: Al principio nada, pero lentamente ves como el vacío te devuelve su mirada.
+	=> noLantern
+- Irte
+	=> END
+
+~ hasLantern
+- Quedarte mirando el interior
+	Puerta: Al principio nada, pero lentamente ves como el vacío te devuelve su mirada.
+	=> hasLantern
+- Entrar => entrar
+- Irte => END
+
+~ entrar
+Oscuridad: Hola chico, ¿estás seguro de querer entrar?
+- Chico: Con mi linterna no tengo ningún miedo
+	Oscuridad: A ver si es verdad...
+	=> END
+- Chico: Quizá... Quizá más adelante...
+	Oscuridad: Eso, vuelve por donde has venido.
+	=> hasLantern

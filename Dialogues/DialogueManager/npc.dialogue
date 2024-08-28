@@ -1,0 +1,25 @@
+~ start
+
+Pani: ¡Hola! ¿Que te trae por aquí?
+
+if InventoryManagerGlobal.hasLantern() == true
+	=> hasLantern
+else
+	=> noLantern
+
+~ noLantern
+- ¿Tienes una linterna por algún casual?
+		Pani: Si, toma, te la presto.
+		do InventoryManagerGlobal.pickLantern()
+		Chico: ¡Gracias!
+		=> END
+- ¿Qué haces aquí?
+	% Pani: Ya sabes, a veces estoy aquí y a veces estoy allá, soy un ser del campo.
+	% Pani: Mis cosas, como siempre. La pregunta es, ¿qué haces tú aqui?
+	=> END
+
+~ hasLantern
+- ¿Qué haces aquí?
+	% Pani: Ya sabes, a veces estoy aquí y a veces estoy allá, soy un ser del campo.
+	% Pani: Mis cosas, como siempre. La pregunta es, ¿qué haces tú aqui?
+	=> END

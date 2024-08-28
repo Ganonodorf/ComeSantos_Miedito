@@ -1,0 +1,19 @@
+join player 1 [animation="Slide In Right" length="1" mirrored="true"]
+El marco de la puerta deja que la oscuridad del interior del edificio se cierna sobre ti, dándote a entender que no saldrá nada bueno si entras sin algo de luz.
+
+Una ráfaga de aire frío entra desde el interior.
+label Hub (Sientes algo extraño viniendo del interior del edificio.)
+Al mirar dentro parece que unos pequeños ojos te miran de vuelta.
+- Entrar [if {hasLintern} == true]
+	join puerta 0 [animation="Fade In Up" length="2" wait="true"]
+	puerta: Hola chico, ¿estás seguro de querer entrar?
+	- Con mi linterna no tengo ningún miedo.
+		puerta: A ver si es verdad...
+	- Quizá... Quizá más adelante...
+		puerta: Eso, vuelve por donde has venido.
+		leave puerta [animation="Fade Out Down" length="2"]
+		jump Hub
+- Quedarte mirando el interior
+	Al principio nada, pero lentamente ves como el vacío te devuelve su mirada.
+	jump Hub
+- Irte
