@@ -21,7 +21,7 @@ func _on_area_exited(area: Area2D) -> void:
 		
 
 func _input(event: InputEvent) -> void:
-	if can_interact and target:
+	if can_interact and target is InteractComponent:
 		if (_check_mouse_event(event) and _check_click_on_sprite(event)) or event.is_action_pressed("interact"):
 			target.on_interact()
 
@@ -29,4 +29,7 @@ func _check_mouse_event(event: InputEvent) -> bool:
 	return event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT
 
 func _check_click_on_sprite(event: InputEvent) -> bool:
-	return target.get_sprite().get_rect().has_point(to_local(event.position))
+	var _rect = target.get_sprite().get_rect()
+	var _local_pos = to_local(event.position)
+	print(_local_pos)
+	return _rect.has_point(_local_pos)

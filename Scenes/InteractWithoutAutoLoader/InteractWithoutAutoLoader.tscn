@@ -28,7 +28,7 @@ shader_parameter/outline_tint = Color(1, 1, 1, 1)
 shader_parameter/enabled = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iw7d8"]
-radius = 42.0119
+radius = 30.0167
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cug3n"]
 radius = 14.0
@@ -607,6 +607,7 @@ script = ExtResource("3_fmcq3")
 [node name="Sprite2D" type="Sprite2D" parent="NPC"]
 material = SubResource("ShaderMaterial_cxf14")
 position = Vector2(0, -1)
+rotation = 0.00421416
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("5_hgyyj")
 
