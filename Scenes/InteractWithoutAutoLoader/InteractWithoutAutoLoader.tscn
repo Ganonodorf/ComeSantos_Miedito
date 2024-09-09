@@ -28,7 +28,7 @@ shader_parameter/outline_tint = Color(1, 1, 1, 1)
 shader_parameter/enabled = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iw7d8"]
-radius = 30.0167
+radius = 23.7697
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cug3n"]
 radius = 14.0
@@ -619,6 +619,13 @@ sprite = NodePath("../Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/InteractComponent"]
 shape = SubResource("CircleShape2D_iw7d8")
+debug_color = Color(0.283278, 0.530195, 0.902286, 0.42)
+
+[node name="CliclableArea" type="ColorRect" parent="NPC/InteractComponent"]
+offset_left = -18.0
+offset_top = -31.0
+offset_right = 21.0
+offset_bottom = 32.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("agent")]
 position = Vector2(312, 438)

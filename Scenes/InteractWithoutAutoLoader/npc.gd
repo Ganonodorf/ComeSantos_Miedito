@@ -13,7 +13,6 @@ class_name Npc extends Node2D
 # MARK: Onready vars
 
 # MARK: Basic lifecycle
-
 func _init() -> void:
 	pass
 

@@ -2,6 +2,8 @@ extends Area2D
 class_name InteractComponent
 
 @export var sprite: Sprite2D
+@export var label_name: String = "[E] to interact"
+
 const BLINKING = preload("res://Scenes/InteractWithoutAutoLoader/blinking.gdshader")
 
 signal player_interacted
@@ -14,9 +16,8 @@ func on_interact():
 	
 func show_label():
 	var label: Label = Label.new()
-	var tween = create_tween()
 	get_parent().add_child(label)
-	label.text = "[E] to interact"
+	label.text = label_name
 	label.name = "InteractLabel"
 	label.global_position.y -= 60
 	label.global_position.x -= label.size.x/2
