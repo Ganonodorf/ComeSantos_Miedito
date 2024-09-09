@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bkhg12wr0e2ju" path="res://Assets/fondo.jpg" id="2_t1ma2"]
 [ext_resource type="Script" path="res://Scenes/InteractWithoutAutoLoader/npc.gd" id="3_fmcq3"]
-[ext_resource type="Shader" path="res://Scenes/Interact/border.gdshader" id="4_rkrsn"]
+[ext_resource type="Shader" path="res://Scenes/InteractWithoutAutoLoader/border.gdshader" id="4_rkrsn"]
 [ext_resource type="Texture2D" uid="uid://2x44as1akj5o" path="res://Sprites/le niñe.png" id="5_hgyyj"]
 [ext_resource type="Script" path="res://Scenes/InteractWithoutAutoLoader/interact_component.gd" id="6_cc1mp"]
 [ext_resource type="Script" path="res://Scenes/ClickToMove/player_click_to_move.gd" id="7_foq20"]
