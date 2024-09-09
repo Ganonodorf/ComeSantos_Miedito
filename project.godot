@@ -15,10 +15,6 @@ run/main_scene="res://Scenes/Interact/Interact.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-InteractionManager="*res://Interaction/InteractionManager.tscn"
-
 [editor]
 
 movie_writer/movie_file="C:/Users/Rom/Documents/Godot is fun/isometric-poc/Clips/clipardo.avi"
